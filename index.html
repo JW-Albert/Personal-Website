@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的個人網站</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .lang-btn {
+            font-family: "Segoe UI Emoji", "Noto Color Emoji", "Apple Color Emoji", sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 導航欄 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="#home" data-zh="我的網站" data-en="My Website">我的網站</a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#home" class="nav-link" data-zh="首頁" data-en="Home">首頁</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#about" class="nav-link" data-zh="關於我" data-en="About">關於我</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#skills" class="nav-link" data-zh="技能" data-en="Skills">技能</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#projects" class="nav-link" data-zh="專案" data-en="Projects">專案</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link" data-zh="聯絡我" data-en="Contact">聯絡我</a>
+                </li>
+            </ul>
+            <div class="language-switcher">
+                <button class="lang-btn active" data-lang="zh">&#x1F1F9;&#x1F1FC; 中文</button>
+                <button class="lang-btn" data-lang="en">&#127468;&#127463; EN</button>
+            </div>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 首頁區域 -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">
+                    <span class="animate-text" data-zh="你好，我是" data-en="Hello, I'm">你好，我是</span>
+                    <span class="animate-text highlight" data-zh="您的名字" data-en="Your Name">您的名字</span>
+                </h1>
+                <p class="hero-subtitle animate-text" data-zh="前端開發者 & 創意設計師"
+                    data-en="Frontend Developer & Creative Designer">前端開發者 & 創意設計師</p>
+                <div class="hero-buttons">
+                    <a href="#about" class="btn btn-primary animate-btn" data-zh="了解更多" data-en="Learn More">了解更多</a>
+                    <a href="#contact" class="btn btn-secondary animate-btn" data-zh="聯絡我" data-en="Contact Me">聯絡我</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="floating-card">
+                    <i class="fas fa-code"></i>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="scroll-arrow"></div>
+        </div>
+    </section>
+
+    <!-- 關於我區域 -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title" data-zh="關於我" data-en="About Me">關於我</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p class="animate-text" data-zh="我是一位充滿熱情的開發者，專注於創建美觀且功能強大的網站應用程式。"
+                        data-en="I am a passionate developer focused on creating beautiful and powerful web applications.">
+                        我是一位充滿熱情的開發者，專注於創建美觀且功能強大的網站應用程式。</p>
+                    <p class="animate-text" data-zh="我喜歡學習新技術，並將創意想法轉化為現實。"
+                        data-en="I love learning new technologies and turning creative ideas into reality.">
+                        我喜歡學習新技術，並將創意想法轉化為現實。</p>
+                    <div class="about-stats">
+                        <div class="stat-item">
+                            <h3>50+</h3>
+                            <p data-zh="完成專案" data-en="Projects Completed">完成專案</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3>3+</h3>
+                            <p data-zh="年經驗" data-en="Years Experience">年經驗</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3>100%</h3>
+                            <p data-zh="客戶滿意度" data-en="Client Satisfaction">客戶滿意度</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <div class="image-placeholder">
+                        <i class="fas fa-user"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 技能區域 -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2 class="section-title" data-zh="技能專長" data-en="Skills">技能專長</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fab fa-html5"></i>
+                    </div>
+                    <h3>HTML5</h3>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-width="90%"></div>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fab fa-css3-alt"></i>
+                    </div>
+                    <h3>CSS3</h3>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-width="85%"></div>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fab fa-js"></i>
+                    </div>
+                    <h3>JavaScript</h3>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-width="80%"></div>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fab fa-react"></i>
+                    </div>
+                    <h3>React</h3>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-width="75%"></div>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fab fa-node-js"></i>
+                    </div>
+                    <h3>Node.js</h3>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-width="70%"></div>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fab fa-python"></i>
+                    </div>
+                    <h3>Python</h3>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-width="65%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 專案區域 -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title" data-zh="我的專案" data-en="My Projects">我的專案</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3 data-zh="電商網站" data-en="E-commerce Website">電商網站</h3>
+                        <p data-zh="使用React和Node.js建立的現代化電商平台"
+                            data-en="Modern e-commerce platform built with React and Node.js">使用React和Node.js建立的現代化電商平台
+                        </p>
+                        <div class="project-tech">
+                            <span>React</span>
+                            <span>Node.js</span>
+                            <span>MongoDB</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link">
+                                <i class="fas fa-external-link-alt"></i>
+                                <span data-zh="查看專案" data-en="View Project">查看專案</span>
+                            </a>
+                            <a href="#" class="project-link">
+                                <i class="fab fa-github"></i>
+                                GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3 data-zh="行動應用程式" data-en="Mobile Application">行動應用程式</h3>
+                        <p data-zh="跨平台的行動應用程式開發" data-en="Cross-platform mobile application development">跨平台的行動應用程式開發
+                        </p>
+                        <div class="project-tech">
+                            <span>React Native</span>
+                            <span>Firebase</span>
+                            <span>JavaScript</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link">
+                                <i class="fas fa-external-link-alt"></i>
+                                <span data-zh="查看專案" data-en="View Project">查看專案</span>
+                            </a>
+                            <a href="#" class="project-link">
+                                <i class="fab fa-github"></i>
+                                GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3 data-zh="數據分析工具" data-en="Data Analytics Tool">數據分析工具</h3>
+                        <p data-zh="使用Python開發的數據視覺化工具" data-en="Data visualization tool developed with Python">
+                            使用Python開發的數據視覺化工具</p>
+                        <div class="project-tech">
+                            <span>Python</span>
+                            <span>Django</span>
+                            <span>Chart.js</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link">
+                                <i class="fas fa-external-link-alt"></i>
+                                <span data-zh="查看專案" data-en="View Project">查看專案</span>
+                            </a>
+                            <a href="#" class="project-link">
+                                <i class="fab fa-github"></i>
+                                GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 聯絡我區域 -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title" data-zh="聯絡我" data-en="Contact Me">聯絡我</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h3 data-zh="電子郵件" data-en="Email">電子郵件</h3>
+                            <p>your.email@example.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h3 data-zh="電話" data-en="Phone">電話</h3>
+                            <p>+886 912 345 678</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h3 data-zh="位置" data-en="Location">位置</h3>
+                            <p data-zh="台灣台北市" data-en="Taipei, Taiwan">台灣台北市</p>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="#" class="social-link">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+                <form class="contact-form">
+                    <div class="form-group">
+                        <input type="text" placeholder="您的姓名" data-placeholder-zh="您的姓名" data-placeholder-en="Your Name"
+                            required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="您的電子郵件" data-placeholder-zh="您的電子郵件"
+                            data-placeholder-en="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" placeholder="主旨" data-placeholder-zh="主旨" data-placeholder-en="Subject">
+                    </div>
+                    <div class="form-group">
+                        <textarea placeholder="您的訊息" data-placeholder-zh="您的訊息" data-placeholder-en="Your Message"
+                            rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary" data-zh="發送訊息" data-en="Send Message">發送訊息</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- 頁尾 -->
+    <footer class="footer">
+        <div class="container">
+            <p data-zh="&copy; 2024 我的個人網站. 保留所有權利." data-en="&copy; 2024 My Personal Website. All rights reserved.">
+                &copy; 2024 我的個人網站. 保留所有權利.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
