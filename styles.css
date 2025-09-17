@@ -263,14 +263,12 @@ body {
 }
 
 .server-card {
-    top: 10px;
     right: 10px;
     animation-delay: -2s;
     animation-duration: 8s;
 }
 
 .cloud-card {
-    bottom: 10px;
     left: 10px;
     animation-delay: -4s;
     animation-duration: 7s;
@@ -278,8 +276,8 @@ body {
 
 .hero-image {
     position: relative;
-    width: 300px;
-    height: 300px;
+    width: 500px;
+    height: 500px;
 }
 
 .scroll-indicator {
@@ -679,9 +677,10 @@ section {
 }
 
 .contact-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
 }
 
 .contact-info {
@@ -690,29 +689,31 @@ section {
 
 .contact-item {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: 1rem;
-    margin-bottom: 2rem;
-    padding: 1.5rem;
+    text-align: center;
+    gap: 0.5rem;
+    padding: 2rem 1.5rem;
     background: #f8fafc;
     border-radius: 15px;
     transition: all 0.3s ease;
+    min-width: 200px;
+    margin-bottom: 0;
 }
 
 .contact-item:hover {
     background: #e5e7eb;
-    transform: translateX(10px);
+    transform: translateY(-5px);
 }
 
 .contact-item i {
-    font-size: 1.5rem;
+    font-size: 2rem;
     color: #6366f1;
-    width: 50px;
-    text-align: center;
+    margin-bottom: 0.5rem;
 }
 
 .contact-item h3 {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     font-weight: 600;
     margin-bottom: 0.5rem;
     color: #333;
@@ -720,12 +721,15 @@ section {
 
 .contact-item p {
     color: #666;
+    font-size: 0.9rem;
+    line-height: 1.4;
 }
 
 .social-links {
     display: flex;
     gap: 1rem;
-    margin-top: 2rem;
+    margin-top: 3rem;
+    justify-content: center;
 }
 
 .social-link {
@@ -746,37 +750,6 @@ section {
     transform: translateY(-3px);
 }
 
-.contact-form {
-    background: #f8fafc;
-    padding: 2rem;
-    border-radius: 15px;
-}
-
-.form-group {
-    margin-bottom: 1.5rem;
-}
-
-.form-group input,
-.form-group textarea {
-    width: 100%;
-    padding: 1rem;
-    border: 2px solid #e5e7eb;
-    border-radius: 10px;
-    font-size: 1rem;
-    transition: border-color 0.3s ease;
-    font-family: inherit;
-}
-
-.form-group input:focus,
-.form-group textarea:focus {
-    outline: none;
-    border-color: #6366f1;
-}
-
-.form-group textarea {
-    resize: vertical;
-    min-height: 120px;
-}
 
 /* 頁尾 */
 .footer {
@@ -863,8 +836,16 @@ section {
     }
 
     .contact-content {
-        grid-template-columns: 1fr;
-        gap: 2rem;
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+
+    .contact-item {
+        min-width: auto;
+        width: 100%;
+        max-width: 300px;
+        margin: 0 auto 2rem auto;
     }
 
     .section-title {

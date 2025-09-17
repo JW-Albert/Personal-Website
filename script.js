@@ -231,44 +231,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }, 800);
     }
 
-    // 聯絡表單處理
-    const contactForm = document.querySelector('.contact-form');
-    if (contactForm) {
-        contactForm.addEventListener('submit', function (e) {
-            e.preventDefault();
 
-            // 獲取表單數據
-            const formData = new FormData(this);
-            const name = this.querySelector('input[type="text"]').value;
-            const email = this.querySelector('input[type="email"]').value;
-            const subject = this.querySelectorAll('input[type="text"]')[1].value;
-            const message = this.querySelector('textarea').value;
-
-            // 簡單驗證
-            if (!name || !email || !message) {
-                const errorMsg = currentLanguage === 'zh' ? '請填寫所有必填欄位' : 'Please fill in all required fields';
-                showNotification(errorMsg, 'error');
-                return;
-            }
-
-            if (!isValidEmail(email)) {
-                const errorMsg = currentLanguage === 'zh' ? '請輸入有效的電子郵件地址' : 'Please enter a valid email address';
-                showNotification(errorMsg, 'error');
-                return;
-            }
-
-            // 模擬發送（實際應用中需要後端處理）
-            const successMsg = currentLanguage === 'zh' ? '訊息已發送！我會盡快回覆您。' : 'Message sent! I will reply to you soon.';
-            showNotification(successMsg, 'success');
-            this.reset();
-        });
-    }
-
-    // 電子郵件驗證
-    function isValidEmail(email) {
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        return emailRegex.test(email);
-    }
 
     // 通知系統
     function showNotification(message, type = 'info') {
