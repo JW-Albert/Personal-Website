@@ -55,106 +55,47 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // 動畫類型配置
     const animationTypes = {
-        'page-flip': 'page-flip',
-        'slide': 'slide-transition',
-        'fade': 'fade-transition',
-        'scale': 'scale-transition',
-        'shimmer': 'language-transition'
+        'fade': 'fade'
     };
-    
-    let currentAnimationType = 'page-flip'; // 預設使用翻頁動畫
-    
+
+    let currentAnimationType = 'fade'; // 預設使用淡入淡出動畫
+
     // 語言切換動畫函數
-    function animateLanguageSwitch(lang, animationType = 'page-flip') {
+    function animateLanguageSwitch(lang, animationType = 'fade') {
         const body = document.body;
-        
+
+        // 清理之前的動畫類別
+        body.classList.remove('fade', 'fading');
+
         // 添加動畫類別
         body.classList.add(animationType);
-        
-        // 根據動畫類型執行不同的動畫
-        switch(animationType) {
-            case 'page-flip':
-                body.classList.add('flipping');
-                setTimeout(() => {
-                    updateLanguage(lang);
-                    updateLanguageButtons();
-                    body.classList.remove('flipping');
-                }, 400);
-                setTimeout(() => {
-                    body.classList.remove(animationType);
-                }, 800);
-                break;
-                
-            case 'slide-transition':
-                const direction = lang === 'en' ? 'sliding-left' : 'sliding-right';
-                body.classList.add(direction);
-                setTimeout(() => {
-                    updateLanguage(lang);
-                    updateLanguageButtons();
-                    body.classList.remove(direction);
-                }, 300);
-                setTimeout(() => {
-                    body.classList.remove(animationType);
-                }, 600);
-                break;
-                
-            case 'fade-transition':
-                body.classList.add('fading');
-                setTimeout(() => {
-                    updateLanguage(lang);
-                    updateLanguageButtons();
-                    body.classList.remove('fading');
-                }, 200);
-                setTimeout(() => {
-                    body.classList.remove(animationType);
-                }, 400);
-                break;
-                
-            case 'scale-transition':
-                body.classList.add('scaling');
-                setTimeout(() => {
-                    updateLanguage(lang);
-                    updateLanguageButtons();
-                    body.classList.remove('scaling');
-                }, 250);
-                setTimeout(() => {
-                    body.classList.remove(animationType);
-                }, 500);
-                break;
-                
-            case 'language-transition':
-                body.classList.add('animating');
-                setTimeout(() => {
-                    updateLanguage(lang);
-                    updateLanguageButtons();
-                }, 300);
-                setTimeout(() => {
-                    body.classList.remove('animating', animationType);
-                }, 600);
-                break;
-        }
+
+        // 執行淡入淡出動畫
+        body.classList.add('fading');
+        setTimeout(() => {
+            updateLanguage(lang);
+            updateLanguageButtons();
+            body.classList.remove('fading');
+        }, 200);
+        setTimeout(() => {
+            body.classList.remove(animationType);
+        }, 400);
     }
-    
+
     // 語言切換按鈕事件
     const langButtons = document.querySelectorAll('.lang-btn');
     langButtons.forEach(btn => {
         btn.addEventListener('click', function () {
             const lang = this.getAttribute('data-lang');
-            
+
             // 防止重複點擊
             if (this.classList.contains('active')) return;
-            
+
             // 執行動畫
             animateLanguageSwitch(lang, currentAnimationType);
         });
     });
-    
-    // 動畫類型切換（可選功能）
-    function setAnimationType(type) {
-        if (animationTypes[type]) {
-            currentAnimationType = type;
-        }
-    }
+
 
     // 初始化語言
     initLanguage();
@@ -266,7 +207,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     // 打字機效果
-    function typeWriter(element, text, speed = 100) {
+    function typeWriter(element, text, speed = 80) {
         let i = 0;
         element.innerHTML = '';
 
@@ -285,9 +226,9 @@ document.addEventListener('DOMContentLoaded', function () {
     const heroTitle = document.querySelector('.hero-title .animate-text:last-child');
     if (heroTitle) {
         setTimeout(() => {
-            const nameText = currentLanguage === 'zh' ? '您的名字' : 'Your Name';
-            typeWriter(heroTitle, nameText, 150);
-        }, 1000);
+            const nameText = currentLanguage === 'zh' ? '王建葦' : 'Albert Wang';
+            typeWriter(heroTitle, nameText, 80);
+        }, 800);
     }
 
     // 聯絡表單處理
@@ -447,15 +388,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // 載入動畫
     window.addEventListener('load', function () {
         document.body.classList.add('loaded');
-
-        // 為首頁元素添加延遲動畫
-        const heroElements = document.querySelectorAll('.hero .animate-text, .hero .animate-btn');
-        heroElements.forEach((el, index) => {
-            setTimeout(() => {
-                el.style.opacity = '1';
-                el.style.transform = 'translateY(0)';
-            }, index * 200);
-        });
+        // CSS動畫會自動執行，不需要手動設置
     });
 
     // 視差滾動效果
